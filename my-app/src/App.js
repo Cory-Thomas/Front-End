@@ -24,8 +24,8 @@ export default function App() {
           <Route path="/">
             <Home />
           </Route>
-        </Switch>
-        <nav>
+      </Switch>
+      <nav>
           <div>
             <Link to='/'>Home</Link>
           </div>
@@ -35,7 +35,7 @@ export default function App() {
           <div>
             <Link to='/Login'>Login</Link>
           </div>
-        </nav>
+      </nav>
       </div>
     </Router>
   );

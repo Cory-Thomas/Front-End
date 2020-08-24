@@ -8,8 +8,8 @@ function LoginDetails({ details }) {
   return (
     <div className='login container'>
       <h2>{details.name}</h2>
-      <p>Size: {details.email}</p>
-      <p>Size: {details.password}</p>
+      <p>Email: {details.email}</p>
+      <p>Password: {details.password}</p>
     </div>
   )
 }

@@ -43,7 +43,7 @@ const initialFormValues = {
   
     const inputChange = (name, value) => {
       yup
-        .reach(formSchema, name)
+        .reach(formSchemaLogin, name)
         .validate(value)
         .then(valid => {
           setFormErrors({
