@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import axios from 'axios';
 
 export default function Signup(){
     const [form, setForm] = useState({
@@ -20,13 +21,24 @@ export default function Signup(){
     };
 
     const handleSubmit = e => {
-            e.preventDefault();
-            setForm({
-                name: '',
-                email: '',
-                password: '',
-                passwordConfirmation: ''
-            })
+        e.preventDefault();
+
+        // axios.post('https://reqres.in/api/', form)
+        //     .then( res => {
+        //         console.log(res);
+
+        //     })
+        //     .catch( error => {
+        //         debugger;
+        //         console.log(error)
+        //     })
+
+        setForm({
+            name: '',
+            email: '',
+            password: '',
+            passwordConfirmation: ''
+        })
     };
 
     return(
