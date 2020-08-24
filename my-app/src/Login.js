@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import LoginDetails from './LoginDetails'
 import LoginForm from './LoginForm'
 import axios from 'axios'
-import formSchemaLogin from './formSchemaLogin'
+import formSchemaLogin from './FormSchemaLogin'
 import * as yup from 'yup'
 
 
