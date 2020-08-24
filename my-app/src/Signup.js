@@ -7,12 +7,16 @@ export default function Signup(){
         password: '',
         passwordConfirmation: ''
     })
+    const [disabled, setDisabled] = useState(true)
 
     const handleChange = e => {
         setForm({
             ...form,
             [e.target.name]: e.target.value
         })
+        if(form.passwordConfirmation && form.name && form.email && form.password !== ''){
+                setDisabled(false)
+            }
     };
 
     const handleSubmit = e => {
@@ -77,7 +81,8 @@ export default function Signup(){
                         />
                     </label>
                 </div>
-                <button type='submit'>Sign Up</button>
+                <button disabled={disabled} type='submit'>Sign Up</button>
+                {form.password !== form.passwordConfirmation ? "Password doesn't match" : null}
             </form>
         </>
     )
