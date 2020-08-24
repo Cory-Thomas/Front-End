@@ -2,8 +2,8 @@
 import React, { useState } from 'react'
 import LoginDetails from './LoginDetails'
 import LoginForm from './LoginForm'
-// import formSchemaLogin from './formSchemaLogin'
 import axios from 'axios'
+// import formSchemaLogin from './formSchemaLogin'
 // import * as yup from 'yup'
 
 
@@ -30,7 +30,7 @@ const initialFormValues = {
     // const [disabled, setDisabled] = useState(initialDisabled)
   
     const postNewLoginDetails = newLoginDetails => {
-      axios.post('https://reqres.in/api/pizzas', newLoginDetails)
+      axios.post('https://reqres.in/api/logindetails', newLoginDetails)
         .then(res => {
           setLoginDetails([...loginDetails, res.data])
         })

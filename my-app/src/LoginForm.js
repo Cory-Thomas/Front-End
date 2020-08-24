@@ -86,12 +86,12 @@ export default function LoginForm(props) {
         <div className='form-group submit'>
             <h4>Login</h4>
             <button className='submit-button' disabled={disabled}>Login</button>
-            <div className='errors'>
+            {/* <div className='errors'>
                 <div>{errors.name}</div>
                 <div>{errors.email}</div>
                 <div>{errors.password}</div>
                 <div>{errors.confirm}</div>
-            </div>
+            </div> */}
         </div>
 
     </form>
