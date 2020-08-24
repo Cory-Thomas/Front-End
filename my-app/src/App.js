@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import Signup from './Signup'
 import Login from './Login'
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import styled from 'styled-components';
 
 export default function App() {
   return (
