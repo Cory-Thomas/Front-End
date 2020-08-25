@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import * as Yup from "yup"; 
 // import axios from 'axios';
 
 export default function Signup(){
@@ -8,9 +9,50 @@ export default function Signup(){
         password: '',
         passwordConfirmation: ''
     })
+    const [errors, setErrors] = useState({
+        name: "",
+        email: "",
+        password: "",
+        passwordConfirmation: ''
+      });
     const [disabled, setDisabled] = useState(true)
 
+    const formSchema = Yup.object().shape({
+        name: Yup
+            .string()
+            .min(3, "Name must be at least 3 characters long")
+            .required(),
+        email: Yup
+            .string().required(),
+        password: Yup
+            .string()
+            .min(3, "Password must be at least 3 characters long")
+            .required(),
+        passwordConfirmation: Yup
+            .string()
+            .min(3, "Password must be at least 3 characters long")
+            .required()
+      });
+
     const handleChange = e => {
+        e.persist()
+        Yup.reach(formSchema, e.target.name)
+            .validate(e.target.value)
+            .then((valid) => {
+                console.log("valid");
+                setErrors({
+                    ...errors,
+                    [e.target.name]: "",
+                });
+            })
+            .catch((err) => {
+                console.log("err: ", err.errors[0]);
+                setErrors({
+                    ...errors,
+                    [e.target.name]: err.errors[0]
+                });
+            });
+
         setForm({
             ...form,
             [e.target.name]: e.target.value
@@ -57,6 +99,7 @@ export default function Signup(){
                         />
                     </label>
                 </div>
+                {errors.name.length > 0 && <p>{errors.name}</p>}
                 <div>
                     <label>
                         Email: 
@@ -69,6 +112,7 @@ export default function Signup(){
                         />
                     </label>
                 </div>
+                {errors.email.length > 0 && <p>{errors.email}</p>}
                 <div>
                     <label>
                         Password: 
@@ -81,6 +125,7 @@ export default function Signup(){
                         />
                     </label>
                 </div>
+                {errors.password.length > 0 && <p>{errors.password}</p>}
                 <div>
                     <label>
                         Confirm Password: 
@@ -93,6 +138,7 @@ export default function Signup(){
                         />
                     </label>
                 </div>
+                {errors.email.passwordConfirmation > 0 && <p>{errors.passwordConfirmation}</p>}
                 <button disabled={disabled} type='submit'>Sign Up</button>
                 {form.password !== form.passwordConfirmation ? "Password doesn't match" : null}
             </form>
