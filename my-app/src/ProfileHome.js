@@ -5,7 +5,6 @@ import ProfileList from './ProfileList';
 import Profile from './Profile';
 
 const ProfileHome = () => {
-//   const [saved, setSaved] = useState([]);
   const [profileList, setProfileList] = useState([]);
 
   useEffect(() => {
