@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Post from './Post';
+import canada from './pictures/1-canada.jpg';
+import machu from './pictures/2-macchupichu.jpg';
+import wadi from './pictures/3-WadiMusa.jpg';
+import nederland from './pictures/4-nederland.jpg';
+import southkorea from './pictures/5-southkorea.jpg';
+import italy from './pictures/6-italy.jpg';
 
 export default function Explore(){
     const [posts, setPosts] = useState([]);         
@@ -10,20 +16,20 @@ export default function Explore(){
             axios.get('https://reqres.in/api/users')
                 .then( res => {
                     const bioObj = {
-                        0: 'first bio',
-                        1: 'second bio',
-                        2: 'third bio',
-                        3: 'fourth bio',
-                        4: 'fifth bio',
-                        5: 'sixth bio'
+                        0: 'Visiting Canmore, Canada',
+                        1: 'Visiting Macchu Pichu, Aguas Calientes, Peru',
+                        2: 'Visiting Wadi Musa, Jordan',
+                        3: 'Visiting Maurick, Vaght, Nederland',
+                        4: 'Visiting Mangyeong-eup, Mangyeong-si, South Korea',
+                        5: 'Visiting Pineto, Province of Teramo, Italy'
                     };
                     const pictureObj = {
-                        0: 'first picture',
-                        1: 'second picture',
-                        2: 'third picture',
-                        3: 'fourth picture',
-                        4: 'fifth picture',
-                        5: 'sixth picture'
+                        0: canada,
+                        1: machu,
+                        2: wadi,
+                        3: nederland,
+                        4: southkorea,
+                        5: italy
                     };
 
                 const myArr = res.data.data.map((user, i) => {
@@ -40,29 +46,9 @@ export default function Explore(){
         getPosts();
     }, [])
 
-    // setPosts([
-
-    // // ])
-    console.log(posts)
-
-    // posts.map( (post, i) => {
-    //     return setPosts([...post, picture: pictureObj[i]])
-    // })
-    
-    // let bioData;
     return(
         <div>
             {posts.map(post => {
-                // for( const bio in bioObj ){
-                //         bioData = { ...post, bio: bioObj[bio] }
-                // }
-                // for( const picture in pictureObj ){
-                //     if(++i === post.id){
-                //         post = { ...post, picture: pictureObj[picture] }
-                //         console.log(post)
-                        
-                //     }
-                // }
                 return <Post key={post.id} user={post} />
             })}
         </div>

@@ -4,7 +4,7 @@ export default function Post({user}){
     return(
         <section>
             
-            <div>{user.picture}</div>
+            <img src={user.picture} alt='alt' width='100px' />
             <div>{user.first_name} {user.last_name}</div>
             <div>{user.bio}</div>
         </section>
