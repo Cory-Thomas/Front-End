@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Signup from './Signup'
 import Login from './Login'
-import ProfileHome from './ProfileHome';
+import Profile from './Profile';
 import Explore from './Explore';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import styled from 'styled-components';
@@ -23,8 +23,8 @@ export default function App() {
           <Route path="/Login">
             <Login />
           </Route>
-          <Route path="/ProfileHome">
-            <ProfileHome />
+          <Route path="/Profile">
+            <Profile />
           </Route>
           <Route path="/Explore">
             <Explore />
@@ -44,7 +44,7 @@ export default function App() {
             <Link to='/Login'>Login</Link>
           </div>
           <div>
-            <Link to='/ProfileHome'>Profile</Link>
+            <Link to='/Profile'>Profile</Link>
           </div>
           <div>
             <Link to='/Explore'>Explore</Link>
