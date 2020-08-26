@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button, Form, FormGroup, Label, Input }
+  from 'reactstrap';
 
 export default function LoginForm(props) {
   const {
@@ -20,60 +22,47 @@ export default function LoginForm(props) {
   }
 
   return (
-    <form className='form container' onSubmit={onSubmit}>
-
-      <div className='form-group inputs'>
-        <h4>Login to Your Expat Journal Account</h4>
-
-        <label>Name:&nbsp;
-          <input
+    <Form className='form-container' onSubmit={onSubmit}>
+      <div className='form-inputs'>
+        <FormGroup>
+        <Label>Name</Label>
+          <Input
             value={values.name}
             onChange={onInputChange}
             name='name'
             type='text'
+            placeholder='Name'
           />
-        </label>
-
-        <br></br>
-        <br></br>
-
-        <label>Email:&nbsp;
-          <input
+        </FormGroup>
+        <FormGroup>
+        <Label>Email</Label>
+          <Input
             value={values.email}
             onChange={onInputChange}
             name='email'
             type='email'
+            placeholder='Email'
           />
-        </label>
-
-        <br></br>
-        <br></br>
-
-        <label>Password:&nbsp;
-          <input
+        </FormGroup>
+        <FormGroup>
+        <Label>Password</Label>
+          <Input
             value={values.password}
             onChange={onInputChange}
             name='password'
-            type='text'
+            type='password'
+            placeholder='Password'
           />
-        </label>
-
-        <br></br>
-
+        </FormGroup>
         </div>
-
-        <div className='form-group submit'>
-            <br></br>
-            <button className='submit-button' disabled={disabled}>Login</button>
+        <div className='form-login-button'>
+            <Button className='btn-lg btn-dark btn-block' disabled={disabled}>Login</Button>
             <div className='errors'>
                 <div>{errors.name}</div>
                 <div>{errors.email}</div>
                 <div>{errors.password}</div>
             </div>
         </div>
-        
-        <br></br>
-
-    </form>
+    </Form>
   )
 }

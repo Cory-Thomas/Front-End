@@ -4,7 +4,6 @@ import axios from 'axios'
 import formSchemaLogin from './FormSchemaLogin'
 import * as yup from 'yup'
 
-
 const initialFormValues = {
     name: '',
     email: '',
@@ -17,7 +16,6 @@ const initialFormValues = {
   }
   const initialLoginDetails = []
   const initialDisabled = true
-  
   
   export default function Login(props) {
      const {setLoggedInUser} = props;
@@ -80,8 +78,9 @@ const initialFormValues = {
     }, [formValues])
   
     return (
-      <div className='container'>
-        <header><h1>Login</h1></header>
+      <div className='form-header'>
+        <header><h1 class='center-text'>Expat Journal</h1></header>
+        <header><h2 class='center-text'>Login</h2></header>
         <LoginForm
           values={formValues}
           inputChange={inputChange}
