@@ -79,8 +79,8 @@ const initialFormValues = {
   
     return (
       <div className='form-header'>
-        <header><h1 class='center-text'>Expat Journal</h1></header>
-        <header><h2 class='center-text'>Login</h2></header>
+        <header><h1 className='center-text'>Expat Journal</h1></header>
+        <header><h2 className='center-text'>Login</h2></header>
         <LoginForm
           values={formValues}
           inputChange={inputChange}
