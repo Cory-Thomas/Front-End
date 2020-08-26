@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,6 +14,9 @@ import Explore from './Explore';
 // import styled from 'styled-components';
 
 export default function App() {
+
+  const [loggedInUser, setLoggedInUser] = useState({})
+
   return (
     <Router>
       <div>
@@ -21,10 +25,10 @@ export default function App() {
             <Signup />
           </Route>
           <Route path="/Login">
-            <Login />
+            <Login setLoggedInUser = {setLoggedInUser} />
           </Route>
           <Route path="/Profile">
-            <Profile />
+            <Profile loggedInUser={loggedInUser} setLoggedInUser = {setLoggedInUser} />
           </Route>
           <Route path="/Explore">
             <Explore />
