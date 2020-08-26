@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import LoginDetails from './LoginDetails'
 import LoginForm from './LoginForm'
 import axios from 'axios'
 import formSchemaLogin from './FormSchemaLogin'
@@ -22,7 +21,9 @@ const initialFormValues = {
   const initialDisabled = true
   
   
-  export default function Login() {
+  export default function Login(props) {
+     const {setLoggedInUser} = props;
+
     const [loginDetails, setLoginDetails] = useState(initialLoginDetails)
     const [formValues, setFormValues] = useState(initialFormValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors)
@@ -37,7 +38,7 @@ const initialFormValues = {
           return err
         })
         .finally(() => {
-          setFormValues(initialFormValues)
+          setLoggedInUser(newLoginDetails);
         })
     }
   
@@ -67,9 +68,8 @@ const initialFormValues = {
     const submit = () => {
       const newLoginDetails = {
         name: formValues.name.trim(),
-        email: formValues.name.trim(),
-        password: formValues.name.trim(),
-        confirm: formValues.name.trim(),
+        email: formValues.email.trim(),
+        password: formValues.password.trim(),
       }
       postNewLoginDetails(newLoginDetails)
     }
@@ -84,7 +84,6 @@ const initialFormValues = {
     return (
       <div className='container'>
         <header><h1>Expat Journal Login</h1></header>
-  
         <LoginForm
           values={formValues}
           inputChange={inputChange}
@@ -92,14 +91,6 @@ const initialFormValues = {
           disabled={disabled}
           errors={formErrors}
         />
-  
-        {
-          loginDetails.map(loginDetails => {
-            return (
-              <LoginDetails key={loginDetails.id} details={loginDetails} />
-            )
-          })
-        }
       </div>
     )
   }
