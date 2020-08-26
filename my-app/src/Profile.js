@@ -58,7 +58,7 @@ export default function Profile(props) {
             <div>
                 {
                 usersJournalEntries.map((entry) => (
-                    <div>
+                    <div key={entry.image}>
                     <div>{entry.title}</div>
                     <img src={entry.image} alt="Journal entry" width="300" height="300"></img>
                     <div>{entry.author}</div>
