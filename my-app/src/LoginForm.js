@@ -24,17 +24,6 @@ export default function LoginForm(props) {
 
       <div className='form-group inputs'>
         <h4>Login to Your Expat Journal Account</h4>
-        <label>Name:&nbsp;
-          <input
-            value={values.name}
-            onChange={onInputChange}
-            name='name'
-            type='text'
-          />
-        </label>
-
-        <br></br>
-        <br></br>
 
         <label>Name:&nbsp;
           <input
@@ -80,7 +69,6 @@ export default function LoginForm(props) {
                 <div>{errors.name}</div>
                 <div>{errors.email}</div>
                 <div>{errors.password}</div>
-                <div>{errors.confirm}</div>
             </div>
         </div>
         
