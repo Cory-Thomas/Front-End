@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import * as Yup from "yup"; 
+import { Button, Form, FormGroup, Label, Input }
+  from 'reactstrap';
+import style from 'styled-components';  
 // import axios from 'axios';
+
+const StyledH1 = style.h1`
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 1%;
+`;
 
 export default function Signup(){
     const [form, setForm] = useState({
@@ -84,64 +95,65 @@ export default function Signup(){
     };
 
     return(
-        <>
-            <h1>Sign Up</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>
-                        Name: 
-                        <input 
-                            type='text'
-                            name='name'
-                            placeholder='Enter your name'
-                            value={form.name}
-                            onChange={handleChange}
-                        />
-                    </label>
+        <section>
+            <StyledH1>Sign Up</StyledH1>
+            <Form className='form-container' onSubmit={handleSubmit}>
+                <div className='form-inputs'>
+                    <FormGroup>
+                        <Label htmlFor='name'>Name: </Label>
+                            <Input 
+                                type='text'
+                                name='name'
+                                id='name'
+                                placeholder='Enter your name'
+                                value={form.name}
+                                onChange={handleChange}
+                            />
+                    </FormGroup>
+                    {errors.name.length > 0 && <p>{errors.name}</p>}
+                    <FormGroup>
+                        <Label htmlFor='email'>Email: </Label>
+                            <Input 
+                                type='email'
+                                name='email'
+                                id='email'
+                                placeholder='Enter your email'
+                                value={form.email}
+                                onChange={handleChange}
+                            />
+                    </FormGroup>
+                    {errors.email.length > 0 && <p>{errors.email}</p>}
+                    <FormGroup>
+                        <Label htmlFor='password'>Password: </Label>
+                            <Input 
+                                type='password'
+                                name='password'
+                                id='password'
+                                placeholder='Enter a password'
+                                value={form.password}
+                                onChange={handleChange}
+                            />
+                    </FormGroup>
+                    {errors.password.length > 0 && <p>{errors.password}</p>}
+                    <FormGroup>
+                        <Label htmlFor='passwordConfirm'>Confirm Password: </Label>
+                            <Input 
+                                type='password'
+                                name='passwordConfirmation'
+                                id='passwordConfirm'
+                                placeholder='Enter a password'
+                                value={form.passwordConfirmation}
+                                onChange={handleChange}
+                            />
+                    </FormGroup>
+                    {errors.passwordConfirmation.length > 0 && <p>{errors.passwordConfirmation}</p>}
                 </div>
-                {errors.name.length > 0 && <p>{errors.name}</p>}
-                <div>
-                    <label>
-                        Email: 
-                        <input 
-                            type='email'
-                            name='email'
-                            placeholder='Enter your email'
-                            value={form.email}
-                            onChange={handleChange}
-                        />
-                    </label>
+                <div className='form-login-button'>
+                    <Button className='btn-lg btn-dark btn-block' disabled={disabled} type='submit'>Sign Up</Button>
                 </div>
-                {errors.email.length > 0 && <p>{errors.email}</p>}
-                <div>
-                    <label>
-                        Password: 
-                        <input 
-                            type='password'
-                            name='password'
-                            placeholder='Enter a password'
-                            value={form.password}
-                            onChange={handleChange}
-                        />
-                    </label>
-                </div>
-                {errors.password.length > 0 && <p>{errors.password}</p>}
-                <div>
-                    <label>
-                        Confirm Password: 
-                        <input 
-                            type='password'
-                            name='passwordConfirmation'
-                            placeholder='Enter a password'
-                            value={form.passwordConfirmation}
-                            onChange={handleChange}
-                        />
-                    </label>
-                </div>
-                {errors.email.passwordConfirmation > 0 && <p>{errors.passwordConfirmation}</p>}
-                <button disabled={disabled} type='submit'>Sign Up</button>
+                
                 {form.password !== form.passwordConfirmation ? "Password doesn't match" : null}
-            </form>
-        </>
+            </Form>
+        </section>
     )
 }
