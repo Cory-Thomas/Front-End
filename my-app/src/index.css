@@ -27,3 +27,38 @@ code {
 .form-header {
   padding: 5%;
 }
+
+.image {
+  width:400px;
+  height: 400px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 16px;
+  padding: 2% 0 0 0;
+}
+
+.card-subtitle {
+  font-weight: bold;
+  font-size: 12px;
+  padding: 2% 0 2% 0;
+}
+
+.profile-header {
+  text-align: center;
+  padding: 5%;
+}
+
+.card-button {
+  font-size: 12px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  margin: 0 0 10% 0;
+}
