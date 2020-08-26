@@ -1,6 +1,4 @@
 import React, {useState} from "react";
-
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,6 +9,20 @@ import Signup from './Signup'
 import Login from './Login'
 import Profile from './Profile';
 import Explore from './Explore';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText
+} from 'reactstrap';
 
 export default function App() {
 
@@ -18,23 +30,31 @@ export default function App() {
 
   return (
     <Router>
-            <nav>
-          <div>
-            <Link to='/'>Home</Link>
-          </div>
-          <div>
-            <Link to='/Signup'>Signup</Link>
-          </div>
-          <div>
-            <Link to='/Login'>Login</Link>
-          </div>
-          <div>
-            <Link to='/Profile'>Profile</Link>
-          </div>
-          <div>
-            <Link to='/Explore'>Explore</Link>
-          </div>
-      </nav>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">Expat Journal</NavbarBrand>
+          <Nav>
+            <NavLink href='/'>Home</NavLink>
+          </Nav>
+          <Nav>
+            <NavLink href='/Profile'>Profile</NavLink>
+          </Nav>
+          <Nav>
+            <NavLink href='/Explore'>Explore</NavLink>
+          </Nav>
+          <UncontrolledDropdown>
+              <DropdownToggle nav caret>
+                Get Started
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>
+                  <NavLink href='/Signup'>Signup</NavLink>
+                </DropdownItem>
+                <DropdownItem>
+                  <NavLink href='/Login'>Login</NavLink>
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+      </Navbar>
       <div>
       <Switch>
           <Route path="/Signup">
