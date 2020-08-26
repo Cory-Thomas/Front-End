@@ -80,7 +80,7 @@ const initialFormValues = {
     }, [formValues])
   
     return (
-      <div className='container'>
+      <div className='form-header'>
         <header><h1>Login</h1></header>
         <LoginForm
           values={formValues}
