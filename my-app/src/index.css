@@ -23,3 +23,7 @@ code {
   margin: auto;
   height: 100%;
 }
+
+.form-header {
+  padding: 5%;
+}
