@@ -9,13 +9,11 @@ const initialFormValues = {
     name: '',
     email: '',
     password: '',
-    confirm: '',
   }
   const initialFormErrors = {
     name: '',
     email: '',
     password: '',
-    confirm: '',
   }
   const initialLoginDetails = []
   const initialDisabled = true

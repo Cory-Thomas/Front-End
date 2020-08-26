@@ -72,15 +72,6 @@ export default function LoginForm(props) {
         <br></br>
         <br></br>
 
-        <label>Confirm Password:&nbsp;
-          <input
-            value={values.confirm}
-            onChange={onInputChange}
-            name='confirm'
-            type='text'
-          />
-        </label>
-
         </div>
 
         <div className='form-group submit'>
