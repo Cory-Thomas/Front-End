@@ -70,7 +70,6 @@ export default function LoginForm(props) {
         </label>
 
         <br></br>
-        <br></br>
 
         </div>
 
@@ -84,6 +83,8 @@ export default function LoginForm(props) {
                 <div>{errors.confirm}</div>
             </div>
         </div>
+        
+        <br></br>
 
     </form>
   )
