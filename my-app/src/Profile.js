@@ -8,6 +8,7 @@ export default function Profile(props) {
 
  const handleError = err => { debugger } 
 
+ useEffect(() => {
     const getProfile = () => {
         axios.get('https://reqres.in/api/user')
           .then(response => {
@@ -21,7 +22,6 @@ export default function Profile(props) {
                     date: 'Jan 1, 2020'
                 },
                 {
-                  
                     title: 'Bali: The Good, The Bad, The Ugly',
                     image: 'https://images.unsplash.com/photo-1583251633146-d0c6c036187d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
                     author: 'By You',
@@ -44,8 +44,8 @@ export default function Profile(props) {
           })
           .catch(handleError)
       }
-   
-      useEffect(() => getProfile(), [])
+        getProfile();
+    }, []);
 
  if(loggedInUser.email) {
     return (

@@ -28,7 +28,7 @@ export default function App() {
             <Login setLoggedInUser = {setLoggedInUser} />
           </Route>
           <Route path="/Profile">
-            <Profile loggedInUser={loggedInUser} setLoggedInUser = {setLoggedInUser} />
+            <Profile loggedInUser = {loggedInUser} setLoggedInUser = {setLoggedInUser} />
           </Route>
           <Route path="/Explore">
             <Explore />
