@@ -72,7 +72,6 @@ export default function Profile(props) {
  } else {
     return (
         <div>
-            <h1>You're not logged in!</h1>
             <Login setLoggedInUser = {setLoggedInUser}/>
         </div>
     )

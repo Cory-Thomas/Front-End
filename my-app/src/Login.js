@@ -9,13 +9,11 @@ const initialFormValues = {
     name: '',
     email: '',
     password: '',
-    confirm: '',
   }
   const initialFormErrors = {
     name: '',
     email: '',
     password: '',
-    confirm: '',
   }
   const initialLoginDetails = []
   const initialDisabled = true
@@ -83,7 +81,7 @@ const initialFormValues = {
   
     return (
       <div className='container'>
-        <header><h1>Expat Journal Login</h1></header>
+        <header><h1>Login</h1></header>
         <LoginForm
           values={formValues}
           inputChange={inputChange}

@@ -19,6 +19,23 @@ export default function App() {
 
   return (
     <Router>
+            <nav>
+          <div>
+            <Link to='/'>Home</Link>
+          </div>
+          <div>
+            <Link to='/Signup'>Signup</Link>
+          </div>
+          <div>
+            <Link to='/Login'>Login</Link>
+          </div>
+          <div>
+            <Link to='/Profile'>Profile</Link>
+          </div>
+          <div>
+            <Link to='/Explore'>Explore</Link>
+          </div>
+      </nav>
       <div>
       <Switch>
           <Route path="/Signup">
@@ -37,28 +54,17 @@ export default function App() {
             <Home />
           </Route>
       </Switch>
-      <nav>
-          <div>
-            <Link to='/'>Home</Link>
-          </div>
-          <div>
-            <Link to='/Signup'>Signup</Link>
-          </div>
-          <div>
-            <Link to='/Login'>Login</Link>
-          </div>
-          <div>
-            <Link to='/Profile'>Profile</Link>
-          </div>
-          <div>
-            <Link to='/Explore'>Explore</Link>
-          </div>
-      </nav>
       </div>
     </Router>
   );
 }
 
 function Home() {
-  return <h2>Get Started</h2>;
+  return <div>
+    <h1>Expat Journal</h1> 
+      <p>Show off the places you've been and remember them for yourself.</p>
+      <p>Share your amazing pics and stories from around the world. </p>
+      <p>Signup or login now to get started!</p>
+      <button>Signup</button> <button>Login</button>
+    </div>;
 }

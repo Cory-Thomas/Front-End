@@ -6,18 +6,13 @@ const formSchemaLogin = yup.object().shape({
         .min(2, 'Name must be at least 2 characters long')
         .required('Name is required'),
     email: yup
-        .string()
-        .min(2, 'Email must be at least 2 characters long')
+        .string().email()
         .required('Email is required'),
     password: yup
         .string()
-        .min(2, 'Password must be at least 2 characters long')
-        .required('Password is required'),
-    confirm: yup
-        .string()
-        .min(2, 'Password must be at least 2 characters long')
-        .required('Password is required'),
-        
+        .required('Please enter your password')
+        .matches(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+            'Password must contain at least 8 characters, one uppercase, one number and one special case character'),
 })
 
 export default formSchemaLogin
