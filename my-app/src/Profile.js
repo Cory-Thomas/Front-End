@@ -68,9 +68,7 @@ export default function Profile(props) {
         <div>
             <div className='profile-header'>
                 <h1>Welcome {loggedInUser.name}</h1>
-                <div>Username: {loggedInUser.email}</div>
-                <Button onClick={()=>{setLoggedInUser({})}}>Logout</Button>
-                <br></br>
+                <div className='profile-welcome-button'><Button onClick={()=>{setLoggedInUser({})}}>Logout</Button></div>
                 <h2>Your Journal Entires</h2>
             </div>
             <div className='cards-container'>

@@ -46,8 +46,22 @@ code {
 }
 
 .profile-header {
+  padding: 2%;
+}
+
+.profile-welcome-button {
+  margin: 0 0 0 1%;
+}
+
+.profile-header h1 {
+  font-size: 25px;
+  padding: 1%;
+}
+
+.profile-header h2 {
   text-align: center;
-  padding: 5%;
+  font-size: 50px;
+  padding: 3%;
 }
 
 .card-button {
@@ -62,3 +76,4 @@ code {
   align-content: center;
   margin: 0 0 10% 0;
 }
+
