@@ -7,6 +7,17 @@ import wadi from './pictures/3-WadiMusa.jpg';
 import nederland from './pictures/4-nederland.jpg';
 import southkorea from './pictures/5-southkorea.jpg';
 import italy from './pictures/6-italy.jpg';
+import style from 'styled-components';
+
+const StyledH2 = style.h2`
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 3%;
+    font-size: 3.5rem;
+    color: #092532; 
+    font-weight: bold;
+`;
 
 export default function Explore(){
     const [posts, setPosts] = useState([]);         
@@ -47,10 +58,13 @@ export default function Explore(){
     }, [])
 
     return(
-        <div className='cards-container' style={{ marginTop: '5%' }}>
+        <>
+            <StyledH2>Explore</StyledH2>
+            <div className='cards-container' style={{ marginTop: '5%' }}>
             {posts.map(post => {
                 return <Post key={post.id} user={post} />
             })}
         </div>
+        </>
     )
 }
