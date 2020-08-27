@@ -96,11 +96,14 @@ export default function Signup(){
 
     return(
         <section>
-            <StyledH1>Sign Up</StyledH1>
+            <StyledH1>
+                <header><h1 className='center-text' style={{color: '#092532', fontWeight: 'bold'}}>Expat Journal</h1></header>
+                <header><h2 className='center-text' style={{color: '#89c9b8', fontWeight: 'bold'}}>Signup</h2></header>
+            </StyledH1>
             <Form className='form-container' onSubmit={handleSubmit}>
                 <div className='form-inputs'>
                     <FormGroup>
-                        <Label htmlFor='name'>Name: </Label>
+                        <Label htmlFor='name' style={{color: '#092532', fontWeight: 'bold'}}>Name: </Label>
                             <Input 
                                 type='text'
                                 name='name'
@@ -112,7 +115,7 @@ export default function Signup(){
                     </FormGroup>
                     {errors.name.length > 0 && <p>{errors.name}</p>}
                     <FormGroup>
-                        <Label htmlFor='email'>Email: </Label>
+                        <Label htmlFor='email' style={{color: '#092532', fontWeight: 'bold'}}>Email: </Label>
                             <Input 
                                 type='email'
                                 name='email'
@@ -124,7 +127,7 @@ export default function Signup(){
                     </FormGroup>
                     {errors.email.length > 0 && <p>{errors.email}</p>}
                     <FormGroup>
-                        <Label htmlFor='password'>Password: </Label>
+                        <Label htmlFor='password' style={{color: '#092532', fontWeight: 'bold'}}>Password: </Label>
                             <Input 
                                 type='password'
                                 name='password'
@@ -136,7 +139,7 @@ export default function Signup(){
                     </FormGroup>
                     {errors.password.length > 0 && <p>{errors.password}</p>}
                     <FormGroup>
-                        <Label htmlFor='passwordConfirm'>Confirm Password: </Label>
+                        <Label htmlFor='passwordConfirm' style={{color: '#092532', fontWeight: 'bold'}}>Confirm Password: </Label>
                             <Input 
                                 type='password'
                                 name='passwordConfirmation'
@@ -149,7 +152,7 @@ export default function Signup(){
                     {errors.passwordConfirmation.length > 0 && <p>{errors.passwordConfirmation}</p>}
                 </div>
                 <div className='form-login-button'>
-                    <Button className='btn-lg btn-dark btn-block' disabled={disabled} type='submit'>Sign Up</Button>
+                    <Button className='btn-lg btn-dark btn-block' style={{backgroundColor: '#89c9b8', color: '#092532', fontWeight: 'bold', border: 'none'}} disabled={disabled} type='submit'>Sign Up</Button>
                 </div>
                 
                 {form.password !== form.passwordConfirmation ? "Password doesn't match" : null}
