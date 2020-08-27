@@ -4,20 +4,19 @@ import axios from 'axios'
 import {
     Card, CardImg, CardBody,
     CardTitle, CardSubtitle, Button
-  } from 'reactstrap';
+} from 'reactstrap';
 
 export default function Profile(props) {
- let {loggedInUser, setLoggedInUser} = props;
- let [usersJournalEntries, setUsersJournalEntries] = useState([]);
+let {loggedInUser, setLoggedInUser} = props;
+let [usersJournalEntries, setUsersJournalEntries] = useState([]);
 
- const handleError = err => { debugger } 
+const handleError = err => { debugger } 
 
- useEffect(() => {
+useEffect(() => {
     const getProfile = () => {
         axios.get('https://reqres.in/api/user')
-          .then(response => {
+        .then(response => {
             // Need a backend URL, for now using fake data
-            //  console.log(response.data.data)
             let usersJournalEntries = [
                 {
                     title: 'My Encounter with a Penguin in Africa',
