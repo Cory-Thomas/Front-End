@@ -67,14 +67,14 @@ useEffect(() => {
         <div>
             <div className='profile-header'>
                 <h1>Welcome <span>{loggedInUser.name}</span></h1>
-                <div className='profile-welcome-button'><Button style={{backgroundColor: '#89c9b8', border: 'none'}}onClick={()=>{setLoggedInUser({})}}>Logout</Button></div>
-                <div style={{backgroundColor: '#092532', color: 'white'}}className='journal-title'><h2>Your Journal Entries</h2></div>
+                <div className='profile-welcome-button'><Button style={{backgroundColor: '#89c9b8', border: 'none'}} onClick={()=>{setLoggedInUser({})}}>Logout</Button></div>
+                <div style={{backgroundColor: '#092532', color: 'white'}} className='journal-title'><h2>Your Journal Entries</h2></div>
             </div>
             <div className='cards-container'>
                 {
                 usersJournalEntries.map((entry) => (
                     <div key={entry.image}> 
-                        <Card>
+                        <Card style={{marginBottom: '8%'}}>
                             <div className='image'><CardImg src={entry.image} alt='Journal entry'/></div>
                             <CardBody>
                                 <CardTitle><div className='card-title'>{entry.title}</div></CardTitle>
