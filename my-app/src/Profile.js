@@ -5,11 +5,6 @@ import {
     Card, CardImg, CardBody,
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
-import style from 'styled-components';
-
-const StyledDiv = style.div`
-  padding: 1%;
-`;
 
 export default function Profile(props) {
  let {loggedInUser, setLoggedInUser} = props;
@@ -35,13 +30,13 @@ export default function Profile(props) {
                     image: 'https://images.unsplash.com/photo-1588665555327-a67c73b3cc23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=950&q=80',
                     author: 'By You',
                     date: 'Feb 1, 2020'
-               },
-               {
+                },
+                {
                     title: 'Sunshine and Sailing in the South of France',
                     image: 'https://images.unsplash.com/photo-1505080857763-eec772cd197d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
                     author: 'By You',
                     date: 'Mar 1, 2020'
-               },
+                },
                 {
                     title: 'Pro Tips for Hiking the Rockies',
                     image: 'https://images.unsplash.com/photo-1568556486596-9e8ad965c80b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
@@ -61,14 +56,14 @@ export default function Profile(props) {
                     date: 'Jun 1, 2020'
                 }
             ];
-           setUsersJournalEntries(usersJournalEntries);
-          })
-          .catch(handleError)
-      }
+            setUsersJournalEntries(usersJournalEntries);
+            })
+            .catch(handleError)
+        }
         getProfile();
     }, []);
 
- if(loggedInUser.email) {
+    if(loggedInUser.email) {
     return (
         <div>
             <div className='profile-header'>
@@ -79,28 +74,26 @@ export default function Profile(props) {
             <div className='cards-container'>
                 {
                 usersJournalEntries.map((entry) => (
-                    <div key={entry.image}>
-                    <StyledDiv>
-                    <Card>
-                        <div className='image'><CardImg src={entry.image} alt='Journal entry'/></div>
-                        <CardBody>
-                            <CardTitle><div className='card-title'>{entry.title}</div></CardTitle>
-                            <CardSubtitle><div className='card-subtitle'>{entry.author} | {entry.date}</div></CardSubtitle>
-                            <Button style={{backgroundColor: '#89c9b8', color: 'white', fontWeight: 'bold', border: 'none'}}><div className='card-button'>Edit</div></Button>
-                        </CardBody>
-                    </Card>  
-                    </StyledDiv>
+                    <div key={entry.image}> 
+                        <Card>
+                            <div className='image'><CardImg src={entry.image} alt='Journal entry'/></div>
+                            <CardBody>
+                                <CardTitle><div className='card-title'>{entry.title}</div></CardTitle>
+                                <CardSubtitle><div className='card-subtitle'>{entry.author} | {entry.date}</div></CardSubtitle>
+                                <Button style={{backgroundColor: '#89c9b8', color: 'white', fontWeight: 'bold', border: 'none'}}><div className='card-button'>Edit</div></Button>
+                            </CardBody>
+                        </Card>
                     </div>
                 ))
                 }
             </div>
         </div>
     )
- } else {
+    } else {
     return (
         <div>
             <Login setLoggedInUser = {setLoggedInUser}/>
         </div>
     )
- }
+    }
 }
