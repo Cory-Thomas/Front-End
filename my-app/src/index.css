@@ -1,14 +1,22 @@
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif !;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 code {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .center-text {
   text-align: center;
+}
+
+.home-container {
+  background-color: #092532;
+  border-radius: 15px;
+  margin: 10%;
+  padding: 10%;
+  color: white;
 }
 
 .form-container {

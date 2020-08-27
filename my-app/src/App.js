@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './index.css'
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,6 +10,7 @@ import Login from './Login'
 import Profile from './Profile';
 import Explore from './Explore';
 import {
+  Button,
   Navbar,
   NavbarBrand,
   Nav,
@@ -74,11 +76,13 @@ export default function App() {
 }
 
 function Home() {
-  return <div>
+  return <div className='home-container'>
+    <div className='home-text'>
     <h1>Expat Journal</h1> 
-      <p>Show off the places you've been and remember them for yourself.</p>
-      <p>Share your amazing pics and stories from around the world. </p>
+      <p>Expat Journal is an interactive online community connecting expatriates from all over the world. Members can share pictures, stories, thoughts, and experiences in their journal entries in order to connect with our ever-growing network of expats. Members can also plan or attend "Expat Events" to meet other expats in your area.</p>
       <p>Signup or login now to get started!</p>
-      <button>Signup</button> <button>Login</button>
-    </div>;
+      <Button style={{backgroundColor: '#89c9b8', color: '#092532', fontWeight: 'bold', border: 'none'}}>Signup</Button> <Button style={{backgroundColor: '#89c9b8', color: '#092532', fontWeight: 'bold', border: 'none'}}>Login</Button>
+    </div>  
+    <div className='home-image'></div>
+  </div>;
 }
