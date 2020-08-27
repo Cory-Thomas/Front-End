@@ -20,7 +20,7 @@ export default function Profile(props) {
             //  console.log(response.data.data)
             let usersJournalEntries = [
                 {
-                    title: 'My Encounter with a Penguin in South Africa',
+                    title: 'My Encounter with a Penguin in Africa',
                     image: 'https://images.unsplash.com/photo-1562651139-65ae77130306?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
                     author: 'By You',
                     date: 'Jan 1, 2020'
