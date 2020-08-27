@@ -5,6 +5,11 @@ import {
     Card, CardImg, CardBody,
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
+import style from 'styled-components';
+
+const StyledDiv = style.div`
+  padding: 1%;
+`;
 
 export default function Profile(props) {
  let {loggedInUser, setLoggedInUser} = props;
@@ -36,7 +41,25 @@ export default function Profile(props) {
                     image: 'https://images.unsplash.com/photo-1505080857763-eec772cd197d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
                     author: 'By You',
                     date: 'Mar 1, 2020'
-               }
+               },
+                {
+                    title: 'My Encounter with a Penguin in Africa',
+                    image: 'https://images.unsplash.com/photo-1562651139-65ae77130306?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
+                    author: 'By You',
+                    date: 'Jan 1, 2020'
+                },
+                {
+                    title: 'Bali: The Good, The Bad, The Ugly',
+                    image: 'https://images.unsplash.com/photo-1588665555327-a67c73b3cc23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=950&q=80',
+                    author: 'By You',
+                    date: 'Feb 1, 2020'
+                },
+                {
+                    title: 'Sunshine and Sailing in the South of France',
+                    image: 'https://images.unsplash.com/photo-1505080857763-eec772cd197d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
+                    author: 'By You',
+                    date: 'Mar 1, 2020'
+                }
             ];
            setUsersJournalEntries(usersJournalEntries);
           })
@@ -56,6 +79,7 @@ export default function Profile(props) {
             <div className='cards-container'>
                 {
                 usersJournalEntries.map((entry) => (
+                    <StyledDiv>
                     <Card>
                     <div key={entry.image}>
                         <div className='image'><CardImg src={entry.image} alt='Journal entry'/></div>
@@ -66,6 +90,7 @@ export default function Profile(props) {
                         </CardBody>
                     </div>
                     </Card>  
+                    </StyledDiv>
                 ))
                 }
             </div>
