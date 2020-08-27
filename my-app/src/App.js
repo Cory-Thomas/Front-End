@@ -48,7 +48,7 @@ export default function App() {
                   <NavLink style={{color: '#89c9b8', fontWeight: 'bold'}} href='/Signup'>Signup</NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink style={{color: '#89c9b8', fontWeight: 'bold'}} href='/Login'>Login</NavLink>
+                  <NavLink style={{color: '#89c9b8', fontWeight: 'bold'}} href='/Profile'>Login</NavLink>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
@@ -57,9 +57,6 @@ export default function App() {
       <Switch>
           <Route path="/Signup">
             <Signup />
-          </Route>
-          <Route path="/Login">
-            <Login setLoggedInUser = {setLoggedInUser} />
           </Route>
           <Route path="/Profile">
             <Profile loggedInUser = {loggedInUser} setLoggedInUser = {setLoggedInUser} />
@@ -83,7 +80,7 @@ function Home() {
       <div className='p1'><p>Expat Journal is an interactive online community connecting expatriates from all over the world. Members can share pictures, stories, thoughts, and experiences in their journal entries in order to connect with our ever-growing network of expats. Members can also plan or attend expat events to meet other expats in their area.</p></div>
       <span><p>Signup or login now to get started!</p></span>
       <Link to='/signup'><Button style={{width: '20%', padding: '2%', backgroundColor: '#89c9b8', color: '#092532', fontWeight: 'bold', border: 'none'}}>Signup</Button></Link> 
-      <Link to='/login'><Button style={{width: '20%', margin: '3%', padding: '2%', backgroundColor: '#89c9b8', color: '#092532', fontWeight: 'bold', border: 'none'}}>Login</Button></Link>
+      <Link to='/profile'><Button style={{width: '20%', margin: '3%', padding: '2%', backgroundColor: '#89c9b8', color: '#092532', fontWeight: 'bold', border: 'none'}}>Login</Button></Link>
     </div>  
     <div className='home-image'>
       <img src='https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2287&q=80' alt='Woman pointing on a map' width='400' height='350'/>

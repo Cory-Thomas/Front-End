@@ -5,6 +5,11 @@ import {
     Card, CardImg, CardBody,
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
+import style from 'styled-components';
+
+const StyledDiv = style.div`
+  padding: 1%;
+`;
 
 export default function Profile(props) {
  let {loggedInUser, setLoggedInUser} = props;
@@ -20,7 +25,7 @@ export default function Profile(props) {
             //  console.log(response.data.data)
             let usersJournalEntries = [
                 {
-                    title: 'My Encounter with a Penguin in South Africa',
+                    title: 'My Encounter with a Penguin in Africa',
                     image: 'https://images.unsplash.com/photo-1562651139-65ae77130306?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
                     author: 'By You',
                     date: 'Jan 1, 2020'
@@ -36,25 +41,25 @@ export default function Profile(props) {
                     image: 'https://images.unsplash.com/photo-1505080857763-eec772cd197d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
                     author: 'By You',
                     date: 'Mar 1, 2020'
-               }
-            //    {
-            //         title: 'Expat Expert: 5 Tips for Those Considering Expat Life',
-            //         image: 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=974&q=80',
-            //         author: 'By You',
-            //         date: 'Apr 1, 2020'
-            //    },
-            //    {
-            //         title: 'Expat Expert: 5 Tips for Those Considering Expat Life',
-            //         image: 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=974&q=80',
-            //         author: 'By You',
-            //         date: 'Apr 1, 2020'
-            //     },
-            //     {
-            //         title: 'Expat Expert: 5 Tips for Those Considering Expat Life',
-            //         image: 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=974&q=80',
-            //         author: 'By You',
-            //         date: 'Apr 1, 2020'
-            //    }
+               },
+                {
+                    title: 'Pro Tips for Hiking the Rockies',
+                    image: 'https://images.unsplash.com/photo-1568556486596-9e8ad965c80b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
+                    author: 'By You',
+                    date: 'Apr 1, 2020'
+                },
+                {
+                    title: 'Best Croatian Beaches Revealed',
+                    image: 'https://images.unsplash.com/photo-1562685109-0a29a41dd123?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2300&q=80',
+                    author: 'By You',
+                    date: 'May 1, 2020'
+                },
+                {
+                    title: 'Scoot Through Italy in Style',
+                    image: 'https://images.unsplash.com/photo-1538895490524-0ded232a96d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
+                    author: 'By You',
+                    date: 'Jun 1, 2020'
+                }
             ];
            setUsersJournalEntries(usersJournalEntries);
           })
@@ -74,6 +79,7 @@ export default function Profile(props) {
             <div className='cards-container'>
                 {
                 usersJournalEntries.map((entry) => (
+                    <StyledDiv>
                     <Card>
                     <div key={entry.image}>
                         <div className='image'><CardImg src={entry.image} alt='Journal entry'/></div>
@@ -84,6 +90,7 @@ export default function Profile(props) {
                         </CardBody>
                     </div>
                     </Card>  
+                    </StyledDiv>
                 ))
                 }
             </div>
