@@ -15,7 +15,7 @@ export default function Post({user}){
             <Card>
                 <div className='image'><CardImg src={user.picture} alt='Journal entry'/></div>
                 <CardBody>
-                <CardTitle><div className='card-title'>Name: {user.first_name} {user.last_name}</div></CardTitle>
+                <CardTitle><div className='card-title'>User: {user.first_name} {user.last_name}</div></CardTitle>
                 <CardSubtitle><div className='card-subtitle'>{user.bio}</div></CardSubtitle>
                 </CardBody>
             </Card>
