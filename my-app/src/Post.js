@@ -2,7 +2,8 @@ import React from 'react';
 import {
     Card, CardImg, CardBody,
     CardTitle, CardSubtitle
-  } from 'reactstrap';
+} from 'reactstrap';
+import { Link } from "react-router-dom";
 import style from 'styled-components';
 
 const StyledDiv = style.div`
@@ -15,8 +16,9 @@ export default function Post({user}){
             <Card>
                 <div className='image'><CardImg src={user.picture} alt='Journal entry'/></div>
                 <CardBody>
-                <CardTitle><div className='card-title'>User: {user.first_name} {user.last_name}</div></CardTitle>
+                <CardTitle><div className='card-title'>User: <Link to='/Profile'>{user.first_name} {user.last_name}</Link></div></CardTitle>
                 <CardSubtitle><div className='card-subtitle'>{user.bio}</div></CardSubtitle>
+                <CardSubtitle><div className='card-subtitle'>Comments: ...</div></CardSubtitle>
                 </CardBody>
             </Card>
         </StyledDiv>
