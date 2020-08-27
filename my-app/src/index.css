@@ -1,14 +1,50 @@
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif !;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 code {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .center-text {
   text-align: center;
+}
+
+.home-container {
+  background-color: #092532;
+  border-radius: 15px;
+  margin: 10%;
+  padding: 10%;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.home-text {
+  text-align: left;
+  padding: 3%;
+}
+
+.home-text .p1 {
+  margin: 5% 0 5% 0;
+}
+
+.home-text h1 {
+  padding: 2% 0 2% 0;
+}
+
+
+.home-text span {
+  font-weight: bold;
+}
+
+.home-image {
+  padding: 3%;
+}
+
+.home-image img {
+  border-radius: 15px;
 }
 
 .form-container {
@@ -80,7 +116,7 @@ code {
   margin: 0 0 10% 0;
 }
 
-span {
+.profile-header span {
   color: #89c9b8;
 }
 

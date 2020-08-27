@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './index.css'
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,6 +10,7 @@ import Login from './Login'
 import Profile from './Profile';
 import Explore from './Explore';
 import {
+  Button,
   Navbar,
   NavbarBrand,
   Nav,
@@ -74,11 +76,16 @@ export default function App() {
 }
 
 function Home() {
-  return <div>
-    <h1>Expat Journal</h1> 
-      <p>Show off the places you've been and remember them for yourself.</p>
-      <p>Share your amazing pics and stories from around the world. </p>
-      <p>Signup or login now to get started!</p>
-      <button>Signup</button> <button>Login</button>
-    </div>;
+  return <div className='home-container'>
+    <div className='home-text'>
+      <h1>Expat Journal</h1> 
+      <div className='p1'><p>Expat Journal is an interactive online community connecting expatriates from all over the world. Members can share pictures, stories, thoughts, and experiences in their journal entries in order to connect with our ever-growing network of expats. Members can also plan or attend expat events to meet other expats in their area.</p></div>
+      <span><p>Signup or login now to get started!</p></span>
+      <Button style={{width: '20%', padding: '2%', backgroundColor: '#89c9b8', color: '#092532', fontWeight: 'bold', border: 'none'}}>Signup</Button> 
+      <Button style={{width: '20%', margin: '3%', padding: '2%', backgroundColor: '#89c9b8', color: '#092532', fontWeight: 'bold', border: 'none'}}>Login</Button>
+    </div>  
+    <div className='home-image'>
+      <img src='https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2287&q=80' alt='Woman pointing on a map' width='400' height='350'/>
+    </div>
+  </div>;
 }

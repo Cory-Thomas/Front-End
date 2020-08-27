@@ -18,7 +18,7 @@ const initialFormValues = {
   const initialDisabled = true
   
   export default function Login(props) {
-     const {setLoggedInUser} = props;
+    const {setLoggedInUser} = props;
 
     const [loginDetails, setLoginDetails] = useState(initialLoginDetails)
     const [formValues, setFormValues] = useState(initialFormValues)
