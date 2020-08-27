@@ -25,27 +25,27 @@ export default function App() {
 
   return (
     <Router>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Expat Journal</NavbarBrand>
+      <Navbar style={{padding: '2%'}} color="light" light expand="md">
+        <NavbarBrand style={{color: '#092532', fontWeight: 'bold'}} href="/">Expat Journal</NavbarBrand>
           <Nav>
-            <NavLink href='/'>Home</NavLink>
+            <NavLink style={{color: '#89c9b8', fontWeight: 'bold'}} href='/'>Home</NavLink>
           </Nav>
           <Nav>
-            <NavLink href='/Profile'>Profile</NavLink>
+            <NavLink style={{color: '#89c9b8', fontWeight: 'bold'}} href='/Profile'>Profile</NavLink>
           </Nav>
           <Nav>
-            <NavLink href='/Explore'>Explore</NavLink>
+            <NavLink style={{color: '#89c9b8', fontWeight: 'bold'}} href='/Explore'>Explore</NavLink>
           </Nav>
           <UncontrolledDropdown>
-              <DropdownToggle nav caret>
+              <DropdownToggle style={{color: '#89c9b8', fontWeight: 'bold'}} nav caret>
                 Get Started
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  <NavLink href='/Signup'>Signup</NavLink>
+                  <NavLink style={{color: '#89c9b8', fontWeight: 'bold'}} href='/Signup'>Signup</NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink href='/Login'>Login</NavLink>
+                  <NavLink style={{color: '#89c9b8', fontWeight: 'bold'}} href='/Login'>Login</NavLink>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

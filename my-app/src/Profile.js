@@ -67,9 +67,9 @@ export default function Profile(props) {
     return (
         <div>
             <div className='profile-header'>
-                <h1>Welcome {loggedInUser.name}</h1>
-                <div className='profile-welcome-button'><Button onClick={()=>{setLoggedInUser({})}}>Logout</Button></div>
-                <h2>Your Journal Entires</h2>
+                <h1>Welcome <span>{loggedInUser.name}</span></h1>
+                <div className='profile-welcome-button'><Button style={{backgroundColor: '#89c9b8', border: 'none'}}onClick={()=>{setLoggedInUser({})}}>Logout</Button></div>
+                <div style={{backgroundColor: '#092532', color: 'white'}}className='journal-title'><h2>Your Journal Entries</h2></div>
             </div>
             <div className='cards-container'>
                 {
@@ -80,7 +80,7 @@ export default function Profile(props) {
                         <CardBody>
                             <CardTitle><div className='card-title'>{entry.title}</div></CardTitle>
                             <CardSubtitle><div className='card-subtitle'>{entry.author} | {entry.date}</div></CardSubtitle>
-                            <Button><div className='card-button'>Edit</div></Button>
+                            <Button style={{backgroundColor: '#89c9b8', color: 'white', fontWeight: 'bold', border: 'none'}}><div className='card-button'>Edit</div></Button>
                         </CardBody>
                     </div>
                     </Card>  
