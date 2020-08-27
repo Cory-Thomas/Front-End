@@ -47,7 +47,7 @@ export default function Explore(){
     }, [])
 
     return(
-        <div>
+        <div className='cards-container'>
             {posts.map(post => {
                 return <Post key={post.id} user={post} />
             })}
