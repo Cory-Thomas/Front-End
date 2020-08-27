@@ -15,7 +15,10 @@ export default function Post({user}){
     return(
         <StyledDiv>
             <motion.div
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ 
+                    scale: 1.03,
+                    boxShadow: '0px 0px 8px rgba(0,0,0, 0.3)'
+                }}
             >
                 <Card>
                 <div className='image'><CardImg src={user.picture} alt='Journal entry'/></div>
