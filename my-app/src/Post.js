@@ -1,12 +1,24 @@
 import React from 'react';
+import {
+    Card, CardImg, CardBody,
+    CardTitle, CardSubtitle
+  } from 'reactstrap';
+import style from 'styled-components';
+
+const StyledDiv = style.div`
+  padding: 1%;
+`;
 
 export default function Post({user}){
     return(
-        <section>
-            
-            <img src={user.picture} alt='alt' width='400px' />
-            <div>{user.first_name} {user.last_name}</div>
-            <div>{user.bio}</div>
-        </section>
+        <StyledDiv>
+            <Card>
+                <div className='image'><CardImg src={user.picture} alt='Journal entry'/></div>
+                <CardBody>
+                <CardTitle><div className='card-title'>Name: {user.first_name} {user.last_name}</div></CardTitle>
+                <CardSubtitle><div className='card-subtitle'>{user.bio}</div></CardSubtitle>
+                </CardBody>
+            </Card>
+        </StyledDiv>
     )
 }
