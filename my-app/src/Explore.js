@@ -47,7 +47,7 @@ export default function Explore(){
     }, [])
 
     return(
-        <div className='cards-container'>
+        <div className='cards-container' style={{ marginTop: '5%' }}>
             {posts.map(post => {
                 return <Post key={post.id} user={post} />
             })}

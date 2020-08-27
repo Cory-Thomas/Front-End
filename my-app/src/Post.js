@@ -16,7 +16,7 @@ export default function Post({user}){
             <Card>
                 <div className='image'><CardImg src={user.picture} alt='Journal entry'/></div>
                 <CardBody>
-                <CardTitle><div className='card-title'>User: <Link to='/Profile'>{user.first_name} {user.last_name}</Link></div></CardTitle>
+                <CardTitle><div className='card-title'>User: <Link to='/Profile' style={{color: '#89c9b8', fontWeight: 'bold'}}>{user.first_name} {user.last_name}</Link></div></CardTitle>
                 <CardSubtitle><div className='card-subtitle'>{user.bio}</div></CardSubtitle>
                 <CardSubtitle><div className='card-subtitle'>Comments: ...</div></CardSubtitle>
                 </CardBody>
