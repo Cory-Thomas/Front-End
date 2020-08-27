@@ -18,11 +18,16 @@ code {
   padding: 10%;
   color: white;
   display: flex;
+  align-items: center;
 }
 
 .home-text {
   text-align: left;
   padding: 3%;
+}
+
+.home-text .p1 {
+  margin: 5% 0 5% 0;
 }
 
 .home-text h1 {
