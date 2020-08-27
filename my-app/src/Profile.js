@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Login from './Login'
 import axios from 'axios'
+import {
+    Card, CardImg, CardBody,
+    CardTitle, CardSubtitle, Button
+  } from 'reactstrap';
 
 export default function Profile(props) {
  let {loggedInUser, setLoggedInUser} = props;
@@ -23,7 +27,7 @@ export default function Profile(props) {
                 },
                 {
                     title: 'Bali: The Good, The Bad, The Ugly',
-                    image: 'https://images.unsplash.com/photo-1583251633146-d0c6c036187d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
+                    image: 'https://images.unsplash.com/photo-1588665555327-a67c73b3cc23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=950&q=80',
                     author: 'By You',
                     date: 'Feb 1, 2020'
                },
@@ -32,13 +36,25 @@ export default function Profile(props) {
                     image: 'https://images.unsplash.com/photo-1505080857763-eec772cd197d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
                     author: 'By You',
                     date: 'Mar 1, 2020'
-               },
-               {
-                    title: 'Expat Expert: 5 Tips for Those Considering Expat Life',
-                    image: 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=974&q=80',
-                    author: 'By You',
-                    date: 'Apr 1, 2020'
                }
+            //    {
+            //         title: 'Expat Expert: 5 Tips for Those Considering Expat Life',
+            //         image: 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=974&q=80',
+            //         author: 'By You',
+            //         date: 'Apr 1, 2020'
+            //    },
+            //    {
+            //         title: 'Expat Expert: 5 Tips for Those Considering Expat Life',
+            //         image: 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=974&q=80',
+            //         author: 'By You',
+            //         date: 'Apr 1, 2020'
+            //     },
+            //     {
+            //         title: 'Expat Expert: 5 Tips for Those Considering Expat Life',
+            //         image: 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=974&q=80',
+            //         author: 'By You',
+            //         date: 'Apr 1, 2020'
+            //    }
             ];
            setUsersJournalEntries(usersJournalEntries);
           })
@@ -50,20 +66,24 @@ export default function Profile(props) {
  if(loggedInUser.email) {
     return (
         <div>
-            <h1>Welcome {loggedInUser.name}</h1>
-            <div>Username: {loggedInUser.email}</div>
-            <button onClick={()=>{setLoggedInUser({})}}>Logout</button>
-            <br></br>
-            <h2>Your Journal Entires</h2>
-            <div>
+            <div className='profile-header'>
+                <h1>Welcome <span>{loggedInUser.name}</span></h1>
+                <div className='profile-welcome-button'><Button style={{backgroundColor: '#89c9b8', border: 'none'}}onClick={()=>{setLoggedInUser({})}}>Logout</Button></div>
+                <div style={{backgroundColor: '#092532', color: 'white'}}className='journal-title'><h2>Your Journal Entries</h2></div>
+            </div>
+            <div className='cards-container'>
                 {
                 usersJournalEntries.map((entry) => (
+                    <Card>
                     <div key={entry.image}>
-                    <div>{entry.title}</div>
-                    <img src={entry.image} alt="Journal entry" width="300" height="300"></img>
-                    <div>{entry.author}</div>
-                    <div>{entry.date}</div>
+                        <div className='image'><CardImg src={entry.image} alt='Journal entry'/></div>
+                        <CardBody>
+                            <CardTitle><div className='card-title'>{entry.title}</div></CardTitle>
+                            <CardSubtitle><div className='card-subtitle'>{entry.author} | {entry.date}</div></CardSubtitle>
+                            <Button style={{backgroundColor: '#89c9b8', color: 'white', fontWeight: 'bold', border: 'none'}}><div className='card-button'>Edit</div></Button>
+                        </CardBody>
                     </div>
+                    </Card>  
                 ))
                 }
             </div>

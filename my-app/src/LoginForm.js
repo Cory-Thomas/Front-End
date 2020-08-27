@@ -25,7 +25,7 @@ export default function LoginForm(props) {
     <Form className='form-container' onSubmit={onSubmit}>
       <div className='form-inputs'>
         <FormGroup>
-        <Label>Name</Label>
+        <Label style={{color: '#092532', fontWeight: 'bold'}}>Name</Label>
           <Input
             value={values.name}
             onChange={onInputChange}
@@ -35,7 +35,7 @@ export default function LoginForm(props) {
           />
         </FormGroup>
         <FormGroup>
-        <Label>Email</Label>
+        <Label style={{color: '#092532', fontWeight: 'bold'}}>Email</Label>
           <Input
             value={values.email}
             onChange={onInputChange}
@@ -45,7 +45,7 @@ export default function LoginForm(props) {
           />
         </FormGroup>
         <FormGroup>
-        <Label>Password</Label>
+        <Label style={{color: '#092532', fontWeight: 'bold'}}>Password</Label>
           <Input
             value={values.password}
             onChange={onInputChange}
@@ -56,7 +56,7 @@ export default function LoginForm(props) {
         </FormGroup>
         </div>
         <div className='form-login-button'>
-            <Button className='btn-lg btn-dark btn-block' disabled={disabled}>Login</Button>
+            <Button className='btn-lg btn-dark btn-block' style={{backgroundColor: '#89c9b8', color: '#092532', fontWeight: 'bold', border: 'none'}} disabled={disabled}>Login</Button>
             <div className='errors'>
                 <div>{errors.name}</div>
                 <div>{errors.email}</div>
