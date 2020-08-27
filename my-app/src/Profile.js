@@ -37,24 +37,6 @@ export default function Profile(props) {
                     author: 'By You',
                     date: 'Mar 1, 2020'
                }
-            //    {
-            //         title: 'Expat Expert: 5 Tips for Those Considering Expat Life',
-            //         image: 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=974&q=80',
-            //         author: 'By You',
-            //         date: 'Apr 1, 2020'
-            //    },
-            //    {
-            //         title: 'Expat Expert: 5 Tips for Those Considering Expat Life',
-            //         image: 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=974&q=80',
-            //         author: 'By You',
-            //         date: 'Apr 1, 2020'
-            //     },
-            //     {
-            //         title: 'Expat Expert: 5 Tips for Those Considering Expat Life',
-            //         image: 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=974&q=80',
-            //         author: 'By You',
-            //         date: 'Apr 1, 2020'
-            //    }
             ];
            setUsersJournalEntries(usersJournalEntries);
           })

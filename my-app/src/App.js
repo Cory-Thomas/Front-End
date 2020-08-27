@@ -48,7 +48,7 @@ export default function App() {
                   <NavLink style={{color: '#89c9b8', fontWeight: 'bold'}} href='/Signup'>Signup</NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink style={{color: '#89c9b8', fontWeight: 'bold'}} href='/Login'>Login</NavLink>
+                  <NavLink style={{color: '#89c9b8', fontWeight: 'bold'}} href='/Profile'>Login</NavLink>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
