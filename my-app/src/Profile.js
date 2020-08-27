@@ -79,18 +79,18 @@ export default function Profile(props) {
             <div className='cards-container'>
                 {
                 usersJournalEntries.map((entry) => (
+                    <div key={entry.image}>
                     <StyledDiv>
                     <Card>
-                    <div key={entry.image}>
                         <div className='image'><CardImg src={entry.image} alt='Journal entry'/></div>
                         <CardBody>
                             <CardTitle><div className='card-title'>{entry.title}</div></CardTitle>
                             <CardSubtitle><div className='card-subtitle'>{entry.author} | {entry.date}</div></CardSubtitle>
                             <Button style={{backgroundColor: '#89c9b8', color: 'white', fontWeight: 'bold', border: 'none'}}><div className='card-button'>Edit</div></Button>
                         </CardBody>
-                    </div>
                     </Card>  
                     </StyledDiv>
+                    </div>
                 ))
                 }
             </div>
