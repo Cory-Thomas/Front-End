@@ -58,9 +58,6 @@ export default function App() {
           <Route path="/Signup">
             <Signup />
           </Route>
-          <Route path="/Login">
-            <Login setLoggedInUser = {setLoggedInUser} />
-          </Route>
           <Route path="/Profile">
             <Profile loggedInUser = {loggedInUser} setLoggedInUser = {setLoggedInUser} />
           </Route>
