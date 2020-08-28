@@ -66,8 +66,10 @@ useEffect(() => {
     return (
         <div>
             <div className='profile-header'>
+                <div className='welcome-container'>
                 <h1>Welcome <span>{loggedInUser.name}</span></h1>
                 <div className='profile-welcome-button'><Button style={{backgroundColor: '#89c9b8', border: 'none'}} onClick={()=>{setLoggedInUser({})}}>Logout</Button></div>
+                </div>
                 <div style={{backgroundColor: '#092532', color: 'white'}} className='journal-title'><h2>Your Journal Entries</h2></div>
             </div>
             <div className='cards-container'>

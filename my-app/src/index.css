@@ -80,6 +80,12 @@ code {
   padding: 2%;
 }
 
+.welcome-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .journal-title {
   background-color: #89c9b8;
   margin: 1%;
@@ -121,7 +127,6 @@ code {
 }
 
 @media (max-width: 1400px) {
-
   .home-container {
     display: flex;
     flex-direction: column-reverse;
