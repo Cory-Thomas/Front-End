@@ -149,4 +149,10 @@ code {
     flex-direction: column;
   }
 }
+ 
+@media (max-width: 600px) {
+  .welcome-container {
+    display: none;
+  }
+}
 
