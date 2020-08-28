@@ -14,7 +14,7 @@ code {
 .home-container {
   background-color: #092532;
   border-radius: 15px;
-  margin: 10%;
+  margin: 5%;
   padding: 10%;
   color: white;
   display: flex;
@@ -80,6 +80,12 @@ code {
   padding: 2%;
 }
 
+.welcome-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .journal-title {
   background-color: #89c9b8;
   margin: 1%;
@@ -118,5 +124,35 @@ code {
 
 .profile-header span {
   color: #89c9b8;
+}
+
+@media (max-width: 1400px) {
+  .home-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .home-text {
+    text-align: center;
+  }
+
+  .home-image img {
+    height: 200px;
+    width:200px;
+  }
+
+  .home-text Button {
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+}
+ 
+@media (max-width: 600px) {
+  .welcome-container {
+    display: none;
+  }
 }
 
