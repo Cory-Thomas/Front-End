@@ -5,6 +5,7 @@ import {
     Card, CardImg, CardBody,
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import { motion } from 'framer-motion';
 
 export default function Profile(props) {
 let {loggedInUser, setLoggedInUser} = props;
@@ -76,6 +77,12 @@ useEffect(() => {
                 {
                 usersJournalEntries.map((entry) => (
                     <div key={entry.image}> 
+                    <motion.div
+                    whileHover={{ 
+                    scale: 1.03,
+                    boxShadow: '0px 0px 8px rgba(0,0,0, 0.3)'
+                    }}
+                    >
                         <Card style={{marginBottom: '8%'}}>
                             <div className='image'><CardImg src={entry.image} alt='Journal entry'/></div>
                             <CardBody>
@@ -84,6 +91,7 @@ useEffect(() => {
                                 <Button style={{backgroundColor: '#89c9b8', color: 'white', fontWeight: 'bold', border: 'none'}}><div className='card-button'>Edit</div></Button>
                             </CardBody>
                         </Card>
+                    </motion.div>
                     </div>
                 ))
                 }
